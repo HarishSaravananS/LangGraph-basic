@@ -2,6 +2,7 @@
 %pip install --quiet -U langchain_openai langchain_core langgraph
 import os
 import getpass
+from langchain_groq import ChatGroq
 
 def _set_env(var: str):
     if not os.environ.get(var):
@@ -13,8 +14,8 @@ _set_env("LANGCHAIN_API_KEY")
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
 os.environ["LANGCHAIN_PROJECT"] = "langchain-academy"
 from langchain_groq import ChatGroq
-llm= ChatGroq(groq_api_key="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", model="llama-3.3-70b-versatile")
-from langchain_openai import ChatOpenAI
+llm= ChatGroq(groq_api_key="", model="llama-3.3-70b-versatile")
+
 
 def multiply(a: int, b: int) -> int:
     """Multiply a and b.
